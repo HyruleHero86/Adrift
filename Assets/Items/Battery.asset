@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Battery
   icon: {fileID: 21300000, guid: 258b2879d3bdc1b428009397e2dda85f, type: 3}
-  prefab: {fileID: 567147022187255751, guid: 8809bf6169090444b94e702fbc61c496, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 9ba69f6197ebb924b9f6f0e3a2a27a71, type: 3}
   stackMax: 1
