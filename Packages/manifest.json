@@ -1,6 +1,10 @@
 {
   "dependencies": {
+<<<<<<< HEAD
+    "com.unity.2d.sprite": "1.0.0",
+=======
     "com.unity.burst": "1.8.17",
+>>>>>>> 96ceab9ee85d6d105a48937585746b181aa67477
     "com.unity.collab-proxy": "2.5.1",
     "com.unity.device-simulator.devices": "1.0.0",
     "com.unity.ext.nunit": "1.0.6",
