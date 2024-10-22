@@ -15,19 +15,12 @@ public class Cart : MonoBehaviour, IInteractable
         rb = GetComponent<Rigidbody>();
         renderer = GetComponent<Renderer>();
         originalMaterial = renderer.material;
-        //constraint to prevent undesired movement
-        rb.constraints= RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     public void Interact()
     {
         isBeingPushed = !isBeingPushed;
         Debug.Log("Cart interaction toggled. Is being pushed: " + isBeingPushed);
-
-        if (!isBeingPushed)
-        {
-            rb.velocity = Vector3.zero; //stops cart immediately
-        }
     }
 
     void FixedUpdate()
@@ -35,12 +28,19 @@ public class Cart : MonoBehaviour, IInteractable
         if (isBeingPushed)
         {
             // Apply force to the cart to push it forward
-            rb.AddForce(transform.forward * 2f);
+            rb.AddForce(transform.forward * 10f);
         }
     }
 
     public void Highlight(bool highlight)
     {
-       renderer.material = highlight ? highlightMaterial : originalMaterial;
+        if (highlight)
+        {
+            renderer.material = highlightMaterial;
+        }
+        else
+        {
+            renderer.material = originalMaterial;
+        }
     }
 }
