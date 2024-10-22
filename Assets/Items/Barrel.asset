@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff880cd524d2b13429675ff083bc8c6f, type: 3}
+  m_Name: Barrel
+  m_EditorClassIdentifier: 
+  name: Barrel
+  icon: {fileID: 21300000, guid: 00901e7c7dafd8949aecfb62289094c9, type: 3}
+  prefab: {fileID: 439239393980121046, guid: 1e3974e3db8c48c41b2604d2478e7e9e, type: 3}
+  stackMax: 1
