@@ -5,43 +5,34 @@ using UnityEngine.UI;
 
 public class InteractionPrompt : MonoBehaviour
 {
-
     public Text promptText;
     public float interactionDistance = 3f;
     public LayerMask interactableLayer;
 
     void Update()
     {
+        Ray ray = new Ray(transform.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactionDistance, interactableLayer))
         {
-            if (promptText == null)
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
             {
-                Debug.LogError("Prompt Text is not assigned!");
-                return;
+                promptText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    interactable.Interact();
+                }
             }
-                Ray ray = new Ray(transform.position, transform.forward);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit, interactionDistance, interactableLayer))
-                {
-                    IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-                    if (interactable != null)
-                    {
-                        promptText.gameObject.SetActive(true);
-
-                        if (Input.GetButtonDown("Interact"))
-                        {
-                            interactable.Interact();
-                        }
-                    }
-                    else
-                    {
-                        promptText.gameObject.SetActive(false);
-                    }
-                }
-                else
-                {
-                    promptText.gameObject.SetActive(false);
-                }
+            else
+            {
+                promptText.gameObject.SetActive(false);
             }
         }
+        else
+        {
+            promptText.gameObject.SetActive(false);
+        }
     }
+}
