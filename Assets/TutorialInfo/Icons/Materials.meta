@@ -1,17 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/TutorialInfo.meta
 guid: b2e1cf67ab3a6cc428f646ba1d9faa6d
 ========
 guid: 42e993c053a6e6b46bed606568359374
 >>>>>>>> NewPlayer-Interaction:Assets/TutorialInfo/Icons/Materials.meta
-=======
-<<<<<<< Updated upstream
-guid: b2e1cf67ab3a6cc428f646ba1d9faa6d
-=======
-guid: 1b405575c1e50483e8a9a33b22dcd16b
->>>>>>> Stashed changes
->>>>>>> NewPlayer-Interaction
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
