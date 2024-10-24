@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//This barrel script will be deleted
 public class Barrel : MonoBehaviour, IInteractable
 {
     private bool isPickedUp = false;
