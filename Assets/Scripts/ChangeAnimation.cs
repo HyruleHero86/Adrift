@@ -25,10 +25,15 @@ public class ChangeAnimation : MonoBehaviour
         // Handle Walking and Sprinting
         bool isWalking = Input.GetKey(KeyCode.W);
         bool isSprinting = Input.GetKey(KeyCode.LeftShift) && isWalking; // Sprint only if walking
+        bool isWalkingBackward = Input.GetKey(KeyCode.S);
+        bool isWalkingLeft = Input.GetKey(KeyCode.A);
+        bool isWalkingRight = Input.GetKey(KeyCode.D);
 
         // Set walking and sprinting booleans based on input
         anim.SetBool("isWalking", isWalking && !isSprinting);  // Walk only if not sprinting
         anim.SetBool("isSprinting", isSprinting);  // Sprint if both W and Shift are pressed
-
+        anim.SetBool("isWalkingBackward", isWalkingBackward);
+        anim.SetBool("isWalkingLeft", isWalkingLeft);
+        anim.SetBool("isWalkingRight", isWalkingRight);
     }
 }
