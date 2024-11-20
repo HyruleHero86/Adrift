@@ -1,0 +1,154 @@
+{
+    "name": "GamepadInputActions",
+    "maps": [
+        {
+            "name": "Gamepad",
+            "id": "33b46e8d-7670-494d-a984-7d7a2a9efecf",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "02ccfc9c-d6e8-40de-b7eb-9aadb5e6afe4",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "PassThrough",
+                    "id": "63561ceb-a02d-4cd5-8a69-18826c57de3f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "cc971bf2-4ad7-40ca-baeb-f6bf869b9a20",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "c99fcb68-3c26-445a-9074-65a0a84e87d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "89cd20cb-76af-4adc-a488-29bacb8492e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DropL",
+                    "type": "Button",
+                    "id": "e5910a44-fdb4-4d36-818b-6e16985fb1c5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DropR",
+                    "type": "Button",
+                    "id": "f5949e9c-7157-49d0-9a6a-ca5296c219d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2c4d9ac0-4105-4372-8aec-8727141ed718",
+                    "path": "<HID:: USB Gamepad          >/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24d30cf3-f096-4199-aa10-ee7d8a9c0d65",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9eed546-b272-4bc9-ad7e-1c6ea4b31994",
+                    "path": "<HID:: USB Gamepad          >/button3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f06c79bd-6162-4792-8513-ec957841e191",
+                    "path": "<HID:: USB Gamepad          >/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7e6e389-f210-44f4-bbf7-5e3f03e1865d",
+                    "path": "<HID:: USB Gamepad          >/button4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9a6921c-3b7d-41e1-89ed-092ba2e8eb55",
+                    "path": "<HID:: USB Gamepad          >/button5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4de20c42-5f9e-48d1-a6d4-5f6a206ae947",
+                    "path": "<HID:: USB Gamepad          >/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DropR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
