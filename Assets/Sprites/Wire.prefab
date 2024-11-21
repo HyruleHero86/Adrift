@@ -9,7 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6730942547473977727}
+<<<<<<< HEAD
   - component: {fileID: 7145890198457282498}
+=======
+  - component: {fileID: 737407328488798373}
+>>>>>>> 8c521dee0a38e016e6a78b76a5f3b90977d873e4
   m_Layer: 0
   m_Name: Wire
   m_TagString: Untagged
@@ -36,7 +40,11 @@ Transform:
   - {fileID: 128851500855097486}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &7145890198457282498
+=======
+--- !u!114 &737407328488798373
+>>>>>>> 8c521dee0a38e016e6a78b76a5f3b90977d873e4
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +53,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 227355489950566584}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: a6f8b9b620c40e742ae7a167bfd5a4de, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: b346513a525c4d04595a59de3b9915db, type: 3}
+>>>>>>> 8c521dee0a38e016e6a78b76a5f3b90977d873e4
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &444555236133250944
