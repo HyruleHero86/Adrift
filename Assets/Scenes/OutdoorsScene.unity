@@ -19735,6 +19735,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303921292967740188, guid: b47bdf1669865c841ace96330ee3d7ec,
+        type: 3}
+      propertyPath: m_text
+      value: HELP US
+      objectReference: {fileID: 0}
     - target: {fileID: 2303921292967740189, guid: b47bdf1669865c841ace96330ee3d7ec,
         type: 3}
       propertyPath: m_Layer
@@ -25528,6 +25533,7 @@ GameObject:
   - component: {fileID: 1807719291}
   - component: {fileID: 1807719292}
   m_Layer: 8
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25546,7 +25552,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2082255900}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 12.029, y: 180.37, z: 0.077}
 --- !u!212 &1807719291
 SpriteRenderer:
@@ -25597,7 +25603,7 @@ SpriteRenderer:
   m_Size: {x: 1.57, y: 1.69}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1807719292
@@ -26531,7 +26537,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 43.6
+  field of view: 14.4
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -31602,3 +31608,4 @@ SceneRoots:
   - {fileID: 1682271989}
   - {fileID: 1561735073}
   - {fileID: 1166395774}
+  - {fileID: 1807719290}
