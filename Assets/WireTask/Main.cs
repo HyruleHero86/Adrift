@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Main : MonoBehaviour
         if (onCount >= switchCount)
         {
             winText.SetActive(true);
+            SceneManager.UnloadSceneAsync("Wire");
+            GameStateManager.Instance.LoadPlayerState(GameObject.FindWithTag("Player").transform);
         }
     }
 }
