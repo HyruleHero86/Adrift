@@ -20619,6 +20619,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2303921292967740188, guid: b47bdf1669865c841ace96330ee3d7ec,
+        type: 3}
+      propertyPath: m_text
+      value: HELP US
+      objectReference: {fileID: 0}
     - target: {fileID: 2303921292967740189, guid: b47bdf1669865c841ace96330ee3d7ec,
         type: 3}
       propertyPath: m_Layer
@@ -27584,7 +27589,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 43.6
+  field of view: 14.4
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
