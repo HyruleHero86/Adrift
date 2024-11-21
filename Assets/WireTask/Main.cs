@@ -1,27 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Main : MonoBehaviour
+public class InteractableObject : MonoBehaviour
 {
-    public static Main Instance;
+    private bool isInteracting = false;
 
-    public int switchCount;
-    public GameObject winText;
-    private int onCount = 0;
-
-    private void Awake()
+    private void OnTriggerEnter(Collider other)
     {
-        Instance = this;
+        if (other.CompareTag("Player") && !isInteracting)
+        {
+            isInteracting = true;
+            SaveState();
+            SceneManager.LoadScene("Wire", LoadSceneMode.Additive);
+        }
     }
 
-    public void SwitchChange(int points)
+    private void SaveState()
     {
-        onCount = onCount + points;
-        if (onCount >= switchCount)
-        {
-            winText.SetActive(true);
-        }
+        // Implement your state-saving logic here
+        // For example, save the player's position, game objects states, etc.
     }
 }
 
