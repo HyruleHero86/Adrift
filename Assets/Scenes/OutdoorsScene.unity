@@ -10947,7 +10947,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: ae64cb70d3f3fd244850e17178328d55,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1870228456}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: ae64cb70d3f3fd244850e17178328d55,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1870228455}
   m_SourcePrefab: {fileID: 100100000, guid: ae64cb70d3f3fd244850e17178328d55, type: 3}
 --- !u!1 &867107080 stripped
 GameObject:
@@ -24085,6 +24093,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1702592570}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1723606504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: b47e3bba032b35441a80e6b384d61baf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2129126108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1723606508
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723606504}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00ce19ff19c9f8c46be50fb2db56924d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1727850159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100012, guid: 3c5ecca38b8a52643ac5b38d00d57155,
@@ -25405,9 +25440,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nCrew,\n\nWe have changed the pass key for everyone \nto access the lower
-    floors. The new code is 5496.\nThis should fix the issue of door going up and
-    down.\n\nV/r,\nCapt. Smith"
+  m_text: "\nCrew,\n\nWe have changed the pass key for everyone                                                      
+    \nto access the lower floors. The new code is 5496.\nThis should fix the issue
+    of door going up and down.\n\nV/r,\nCapt. Smith"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -26583,6 +26618,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2974149c6fb01b409a280581634da96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1870228451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: ae64cb70d3f3fd244850e17178328d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 859586583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1870228455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870228451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfd5d830b2602b45b5dbcb206bd86c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1870228456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870228451}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4927382, y: 2.7793026, z: 0.6405722}
+  m_Center: {x: 0.3906279, y: -0.08182049, z: 0.075781286}
 --- !u!4 &1872498815 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ba69f6197ebb924b9f6f0e3a2a27a71,
@@ -31138,7 +31212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b47e3bba032b35441a80e6b384d61baf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.022
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: b47e3bba032b35441a80e6b384d61baf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31192,6 +31266,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1616095902}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: b47e3bba032b35441a80e6b384d61baf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1723606508}
   m_SourcePrefab: {fileID: 100100000, guid: b47e3bba032b35441a80e6b384d61baf, type: 3}
 --- !u!1 &2130291930
 GameObject:
