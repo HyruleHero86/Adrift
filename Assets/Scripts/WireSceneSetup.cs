@@ -28,6 +28,6 @@ public class WireSceneSetup : MonoBehaviour
             player.transform.position = new Vector3(posX, posY, posZ);
         }
 
-        SceneManager.LoadScene(1); // Assuming Scene 1 is the main scene
+        SceneManager.LoadScene(1);
     }
 }

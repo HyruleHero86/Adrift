@@ -15,8 +15,11 @@ public class PlayerInteraction : MonoBehaviour
     private PickableItem heldItemLeft;
     public float dropInteractionDelay = 0.5f; // Half a second delay
 
+    private bool isInteracting = false;
+
     void Update()
     {
+        // Check for interactable objects in range
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
@@ -41,26 +44,17 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     Debug.Log("Interact button pressed");
                     interactable.Interact();
-                    if (interactable is PickableItem pickableItem)
-                    {
-                        TryPickUpItem(pickableItem);
-                    }
+                    isInteracting = true;
                 }
             }
             else
             {
-                // Hide the prompt and un-highlight the interactable
-                promptText.gameObject.SetActive(false);
-                currentInteractable?.Highlight(false);
-                currentInteractable = null;
+                ClearInteraction();
             }
         }
         else
         {
-            // Hide the prompt and un-highlight the interactable
-            promptText.gameObject.SetActive(false);
-            currentInteractable?.Highlight(false);
-            currentInteractable = null;
+            ClearInteraction();
         }
 
         // Check for drop input
@@ -73,6 +67,28 @@ public class PlayerInteraction : MonoBehaviour
         {
             DropLeftItem();
         }
+
+        // Exit interaction if already interacting and 'E' is pressed again
+        if (isInteracting && Input.GetButtonDown("Interact"))
+        {
+            ExitInteraction();
+        }
+    }
+
+    private void ExitInteraction()
+    {
+        isInteracting = false;
+        currentInteractable?.Highlight(false);
+        currentInteractable = null;
+        promptText.gameObject.SetActive(false);
+        Debug.Log("Exited Interaction");
+    }
+
+    private void ClearInteraction()
+    {
+        promptText.gameObject.SetActive(false);
+        currentInteractable?.Highlight(false);
+        currentInteractable = null;
     }
 
     private void TryPickUpItem(PickableItem item)

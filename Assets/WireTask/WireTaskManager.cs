@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class WireTaskManager : MonoBehaviour
 {
-    public Text youWinText; // Assign this in the inspector to your "You Win" UI Text element
+    public TextMeshProUGUI youWinText;
     private bool isWireTaskCompleted = false;
     private int wiresConnected = 0; // To track the number of wires connected
 
@@ -29,10 +30,9 @@ public class WireTaskManager : MonoBehaviour
         }
     }
 
-    // This method should contain your actual task completion check logic
     bool CheckWireTaskCompletion()
     {
-        return wiresConnected == 4; // Assuming 4 wires need to be connected
+        return wiresConnected == 4; 
     }
 
     void OnWireTaskComplete()
@@ -45,12 +45,12 @@ public class WireTaskManager : MonoBehaviour
         }
 
         // After displaying the text, return to the main scene
-        Invoke("ReturnToMainScene", 3f); // 3 seconds delay
+        Invoke("ReturnToMainScene", 1f); // 1 seconds delay
     }
 
     void ReturnToMainScene()
     {
-        SceneManager.LoadScene(1); // Assuming Scene 1 is the main scene
+        SceneManager.LoadScene(1);
     }
 
     // Method to simulate connecting a wire (Call this method when a wire is connected)
