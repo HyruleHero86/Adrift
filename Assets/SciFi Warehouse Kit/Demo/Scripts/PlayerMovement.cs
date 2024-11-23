@@ -15,8 +15,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    
-     public AudioClip footStepSound;
+    public bool isIncapacitated = false;
+
+    public AudioClip footStepSound;
      public float footStepDelay;
  
      private float nextFootstep = 0;
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isIncapacitated) return;
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y <0)
@@ -46,15 +49,56 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
          if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) && isGrounded)
-            {
+         {
              nextFootstep -= Time.deltaTime;
              if (nextFootstep <= 0) 
-                {
-                 GetComponent<AudioSource>().PlayOneShot(footStepSound, 0.7f);
-                 nextFootstep += footStepDelay;
-                }
+             {
+              GetComponent<AudioSource>().PlayOneShot(footStepSound, 0.7f);
+              nextFootstep += footStepDelay;
              }
          }
+    }
+
+    public void SetIncapacitated(bool isIncapacitated)
+    {
+        this.isIncapacitated = isIncapacitated;
+
+        Animator animator = GetComponentInChildren<Animator>();
+        if (isIncapacitated)
+        {
+            animator.SetTrigger("Downed"); // Trigger the downed animation
+        }
+
+        if (controller != null)
+        {
+            controller.enabled = !isIncapacitated;
+        }
+    }
+
+    public bool IsIncapacitated()
+    {
+        return isIncapacitated;
+    }
+
+    public void RevivePlayer()
+    {
+        if (isIncapacitated)
+        {
+            isIncapacitated = false;
+
+            // Trigger the revive animation
+            ChangeAnimation playerAnimation = GetComponent<ChangeAnimation>();
+            if (playerAnimation != null)
+            {
+                playerAnimation.PlayReviveAnimation();
+            }
+
+            if (controller != null)
+            {
+                controller.enabled = true;
+            }
+        }
+    }
 }
 
 

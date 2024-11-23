@@ -36,4 +36,19 @@ public class ChangeAnimation : MonoBehaviour
         anim.SetBool("isWalkingLeft", isWalkingLeft);
         anim.SetBool("isWalkingRight", isWalkingRight);
     }
+
+    public void PlayDownedAnimation()
+    {
+        anim.SetTrigger("Downed"); // Trigger for the downed animation
+    }
+
+    public void PlayReviveAnimation()
+    {
+        anim.SetTrigger("isRevived"); // Trigger for the player being revived
+    }
+
+    public void PlayRevivingAnimation()
+    {
+        anim.SetTrigger("Reviving"); // Trigger for the player performing the revive
+    }
 }
