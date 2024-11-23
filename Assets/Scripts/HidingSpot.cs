@@ -3,7 +3,7 @@ using UnityEngine;
 public class HidingSpot : MonoBehaviour
 {
     private bool playerInRange = false;
-    private bool isHiding = false;
+    public bool isHiding = false;
     private GameObject player;
     private CharacterController characterController;
     private PlayerMovement playerMovement;
