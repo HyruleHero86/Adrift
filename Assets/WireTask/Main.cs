@@ -10,10 +10,19 @@ public class Main : MonoBehaviour
     public int switchCount; // Total number of switches that need to be turned on
     public GameObject winText; // The UI text element that displays "You did it!"
     private int onCount = 0; // Current count of switches that are turned on
+    public bool wiresConnected = false;
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SwitchChange(int points)
@@ -22,6 +31,7 @@ public class Main : MonoBehaviour
         if (onCount >= switchCount)
         {
             winText.SetActive(true); // Display the "You did it!" text
+            wiresConnected = true;
             StartCoroutine(ReturnToMainScene()); // Start the coroutine to return to the main scene
         }
     }

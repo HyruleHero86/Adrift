@@ -97,10 +97,12 @@ public class NPCNavigation : MonoBehaviour
             currentState = NPCSTATE.Patrolling;
             agent.speed = patrolSpeed;
             agent.destination = patrolPoints[currentPatrolIndex].position;
+            
         }
         else
         {
             agent.destination = player.position; // Keep chasing the player
+            PlayDectionSound();
         }
     }
 
@@ -126,7 +128,6 @@ public class NPCNavigation : MonoBehaviour
             playerDetected = true;
             currentState = NPCSTATE.Chasing;
             agent.speed = chaseSpeed;
-            PlayDectionSound();
             Debug.Log("Player detected, chasing!");
         }
     }
