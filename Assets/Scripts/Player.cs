@@ -4,7 +4,7 @@ public class Player : MonoBehaviour
 {
     private void OnEnable()
     {
-        GameStateManager.Instance.LoadPlayerState(transform);
+        GameStateManager.Instance.LoadInitialPlayerState(transform);
     }
 }
 

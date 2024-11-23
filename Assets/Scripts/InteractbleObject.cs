@@ -17,7 +17,7 @@ public class InteractableObject : MonoBehaviour
 
     private void SaveState(Transform playerTransform)
     {
-        GameStateManager.Instance.SavePlayerState(playerTransform);
+        GameStateManager.Instance.SaveInitialPlayerState(playerTransform);
     }
 }
 

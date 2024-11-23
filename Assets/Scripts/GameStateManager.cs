@@ -6,48 +6,38 @@ public class GameStateManager : MonoBehaviour
 
     private Vector3 initialPlayerPosition;
     private Quaternion initialPlayerRotation;
-    private Vector3 playerPosition;
-    private Quaternion playerRotation;
-    private bool hasSavedInitialState = false;
+    private bool initialPositionSet = false;
 
     private void Awake()
     {
+        // Ensure there's only one instance of the GameStateManager
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  // Persist across scenes
         }
-        else
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
     }
 
+    // Save the initial position when the game starts
     public void SaveInitialPlayerState(Transform playerTransform)
     {
-        if (!hasSavedInitialState)
-        {
-            initialPlayerPosition = playerTransform.position;
-            initialPlayerRotation = playerTransform.rotation;
-            hasSavedInitialState = true;
-        }
+        initialPlayerPosition = playerTransform.position;
+        initialPlayerRotation = playerTransform.rotation;
+        initialPositionSet = true;
     }
 
-    public void SavePlayerState(Transform playerTransform)
-    {
-        playerPosition = playerTransform.position;
-        playerRotation = playerTransform.rotation;
-    }
-
-    public void LoadPlayerState(Transform playerTransform)
-    {
-        playerTransform.position = playerPosition;
-        playerTransform.rotation = playerRotation;
-    }
-
+    // Load the saved initial position when the scene loads
     public void LoadInitialPlayerState(Transform playerTransform)
     {
-        playerTransform.position = initialPlayerPosition;
-        playerTransform.rotation = initialPlayerRotation;
+        if (initialPositionSet)
+        {
+            playerTransform.position = initialPlayerPosition;
+            playerTransform.rotation = initialPlayerRotation;
+        }
     }
 }
+

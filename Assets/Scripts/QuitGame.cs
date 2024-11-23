@@ -1,58 +1,109 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour
+public class QuitAndReturnScript : MonoBehaviour
 {
-    public GameObject menuPanel; // Reference to the menu panel
-    public Text controlsText;    // Reference to the controls text (use TextMeshProUGUI if using TextMeshPro)
-    public Slider volumeSlider;  // Reference to the volume slider
-    public Button backButton;    // Reference to the back button
+    public Button quitButton; // Reference to the UI Button for quitting the application
+    public string titleSceneName = "Title"; // Name of the title scene to return to
+    public string[] mouseClickScenes; // List of scenes that require mouse clicks
+
+    private bool isCursorUnlocked = false; // Track the cursor state
 
     private void Start()
     {
-        // Set up initial states
-        menuPanel.SetActive(false);
+        // Add a listener to the quit button to call the Quit method when clicked
+        if (quitButton != null)
+        {
+            quitButton.onClick.AddListener(Quit);
+        }
 
-        // Set the controls text
-        controlsText.text = "W - Move Forward\n" +
-                            "S - Move Backward\n" +
-                            "A - Move Left\n" +
-                            "D - Move Right\n" +
-                            "Space - Jump\n" +
-                            "Left Shift - Sprint\n" +
-                            "E - Player Interaction\n";
-
-        // Add listener for volume slider
-        volumeSlider.onValueChanged.AddListener(SetVolume);
-
-        // Add listener for back button
-        backButton.onClick.AddListener(CloseMenu);
+        // Unlock the cursor if the current scene requires mouse clicks
+        if (IsMouseClickScene(SceneManager.GetActiveScene().name))
+        {
+            UnlockCursor();
+        }
+        else
+        {
+            LockCursor();
+        }
     }
 
     private void Update()
     {
-        // Open the menu when the Escape key is pressed
+        // Check if the escape key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OpenMenu();
+            if (isCursorUnlocked)
+            {
+                ReturnToTitle();
+            }
+            else
+            {
+                UnlockCursor();
+            }
         }
     }
 
-    private void OpenMenu()
+    // Method to return to the title scene
+    public void ReturnToTitle()
     {
-        menuPanel.SetActive(true);
-        Time.timeScale = 0f; // Pause the game
+        SceneManager.LoadScene(titleSceneName);
+        if (IsMouseClickScene(titleSceneName))
+        {
+            UnlockCursor();
+        }
+        else
+        {
+            LockCursor();
+        }
     }
 
-    private void CloseMenu()
+    // Method to quit the application
+    public void Quit()
     {
-        menuPanel.SetActive(false);
-        Time.timeScale = 1f; // Resume the game
+        // If we are running in a standalone build of the game
+#if UNITY_STANDALONE
+        // Quit the application
+        Application.Quit();
+#endif
+
+        // If we are running in the editor
+#if UNITY_EDITOR
+        // Stop playing the scene
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
-    private void SetVolume(float value)
+    // Method to unlock the cursor
+    private void UnlockCursor()
     {
-        AudioListener.volume = value;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        isCursorUnlocked = true;
+    }
+
+    // Method to lock the cursor
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isCursorUnlocked = false;
+    }
+
+    // Check if the given scene name is in the list of mouse click scenes
+    private bool IsMouseClickScene(string sceneName)
+    {
+        foreach (string mouseClickScene in mouseClickScenes)
+        {
+            if (mouseClickScene == sceneName)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
+
+
 

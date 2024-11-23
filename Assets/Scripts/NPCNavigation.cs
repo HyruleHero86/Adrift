@@ -128,6 +128,7 @@ public class NPCNavigation : MonoBehaviour
             playerDetected = true;
             currentState = NPCSTATE.Chasing;
             agent.speed = chaseSpeed;
+            PlayDectionSound();
             Debug.Log("Player detected, chasing!");
         }
     }

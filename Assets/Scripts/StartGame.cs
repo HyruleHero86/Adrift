@@ -21,7 +21,16 @@ public class StartGame : MonoBehaviour
         }
 
         // Load the player's initial position after the scene is loaded
-        GameStateManager.Instance.LoadInitialPlayerState(GameObject.FindWithTag("Player").transform);
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            GameStateManager.Instance.LoadInitialPlayerState(player.transform);
+        }
+
+        // Unlock the mouse cursor to allow players to click on buttons in the scene
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
+
 

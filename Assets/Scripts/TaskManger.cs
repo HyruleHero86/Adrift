@@ -8,7 +8,7 @@ public class TaskManager : MonoBehaviour
         SceneManager.UnloadSceneAsync("Wire");
         if (GameStateManager.Instance != null)
         {
-            GameStateManager.Instance.LoadPlayerState(GameObject.FindWithTag("Player").transform);
+            GameStateManager.Instance.SaveInitialPlayerState(GameObject.FindWithTag("Player").transform);
         }
     }
 }
