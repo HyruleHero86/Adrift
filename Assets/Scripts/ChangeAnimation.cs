@@ -5,6 +5,9 @@ using UnityEngine;
 public class ChangeAnimation : MonoBehaviour
 {
     Animator anim;
+    bool isDowned = false;
+    bool isReviving = false;
+    float reviveTime = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +18,10 @@ public class ChangeAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDowned)
+        {
+            return;
+        }
         // Jump
         if (Input.GetButtonDown("Jump"))
         {
@@ -35,5 +42,34 @@ public class ChangeAnimation : MonoBehaviour
         anim.SetBool("isWalkingBackward", isWalkingBackward);
         anim.SetBool("isWalkingLeft", isWalkingLeft);
         anim.SetBool("isWalkingRight", isWalkingRight);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("NPC"))
+        {
+            isDowned = true;
+            anim.SetTrigger("Downed");
+            Debug.Log("Player is downed!");
+        }
+    }
+
+    public void Revive()
+    {
+        if(isDowned && !isReviving)
+        {
+            StartCoroutine(RevivePlayer());
+        }
+    }
+
+    IEnumerator RevivePlayer()
+    {
+        isReviving = true;
+        Debug.Log("Reviving Player...");
+        yield return new WaitForSeconds(reviveTime);
+        isDowned = false;
+        isReviving = false;
+        anim.SetTrigger("Revived");
+        Debug.Log("Player revived!");
     }
 }
