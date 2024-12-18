@@ -1846,6 +1846,8 @@ MonoBehaviour:
   winText: {fileID: 2122699216}
 <<<<<<< HEAD
   wiresConnected: 0
+=======
+>>>>>>> 500015ec6c147d1ede81d15aefb8142ad0b7cdda
 --- !u!1001 &2034914238
 PrefabInstance:
   m_ObjectHideFlags: 0
