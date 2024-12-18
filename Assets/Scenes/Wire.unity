@@ -1844,6 +1844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchCount: 4
   winText: {fileID: 2122699216}
+<<<<<<< HEAD
   wiresConnected: 0
 --- !u!1001 &2034914238
 PrefabInstance:
